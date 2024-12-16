@@ -24,8 +24,3 @@ compiler.cxx_standard   2017
 
 test.run        yes
 test.target     check
-
-post-destroot {
-    # macports audacious uses .bundle instead of .dylib for plugins
-    ln -s uade.dylib ${destroot}${prefix}/lib/audacious/Input/uade.bundle
-}
