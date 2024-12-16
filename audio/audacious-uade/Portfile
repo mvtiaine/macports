@@ -1,0 +1,31 @@
+PortSystem          1.0
+
+name                audacious-uade
+version             0.12.3
+license             GPL-2+
+categories          audio
+homepage            https://github.com/mvtiaine/audacious-uade
+description         UADE plugin for Audacious music player
+
+master_sites        https://github.com/mvtiaine/audacious-uade/releases/download/${version}/
+distname            audacious-uade-${version}
+use_bzip2           yes
+checksums           rmd160  67b80fb7bb17970e4effbfabb77854dc39a88d8f \
+                    sha256  9d49a041551696511b61db0b1c31e0fc379633be5696de26b63876d94e31a932 \
+                    size    8195555
+
+depends_lib         port:audacious-core
+depends_build       port:pkgconfig \
+                    port:gmake
+                                                                                                                                                                                                                                                
+build.cmd   ${prefix}/bin/gmake
+
+compiler.cxx_standard   2017
+
+test.run        yes
+test.target     check
+
+post-destroot {
+    # macports audacious uses .bundle instead of .dylib for plugins
+    ln -s uade.dylib ${destroot}${prefix}/lib/audacious/Input/uade.bundle
+}
