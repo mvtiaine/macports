@@ -1,7 +1,7 @@
 PortSystem          1.0
 
 name                audacious-uade
-version             0.14.2
+version             0.14.3
 license             GPL-2+
 categories          audio
 homepage            https://github.com/mvtiaine/audacious-uade
@@ -10,9 +10,9 @@ description         UADE plugin for Audacious and DeaDBeeF
 master_sites        https://github.com/mvtiaine/audacious-uade/releases/download/${version}/
 distname            audacious-uade-${version}
 use_bzip2           yes
-checksums           rmd160  08a8558aecb08b87667d17e58733922af897e7fc \
-                    sha256  881d4ac8088d0e8c8ef060d85d829d2585ceb9237fd09d022b03818b40216d9b \
-                    size    12963065
+checksums           rmd160  251e42c157e8f4a4938261e34ccaf119db972a5f \
+                    sha256  2ae83b9095e960a07a00f970fdb0b88f09998c5cb5ca62748e717e6dd54f00a5 \
+                    size    13082352
 
 depends_build       port:pkgconfig \
                     port:gmake
